@@ -1,0 +1,33 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.btn{
+    height: 60px;
+    width: 60px;
+    margin: 10px;
+    font-size: 40px;
+}
+
+.clear{
+    display: flex;
+    justify-content: end;
+}
+
+.number{
+    border: 1px solid rgb(152, 226, 152);
+    border-radius: 10px;
+    padding-bottom: 60px;
+}
+
+.operator{
+    border: 1px solid rgb(169, 87, 247);
+    border-radius: 10px;
+    padding-bottom: 60px;
+}
