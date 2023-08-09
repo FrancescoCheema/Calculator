@@ -9,25 +9,53 @@ body{
 }
 
 .btn{
-    height: 60px;
-    width: 60px;
-    margin: 10px;
+    height: 70px;
+    width: 70px;
+    margin: 15px;
     font-size: 40px;
 }
 
-.clear{
+.main-screen{
     display: flex;
-    justify-content: end;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+#screen{
+    width: 300px;
+    height: 65px;
+    border: 1px solid salmon;
+    align-items: center;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#clear-btn{
+    height: 70px;
+    width: 70px;
+    border: 1px solid rgb(235, 251, 8);
+    border-radius: 10px;
 }
 
 .number{
-    border: 1px solid rgb(152, 226, 152);
+    border: 1px solid rgb(250, 188, 19);
     border-radius: 10px;
     padding-bottom: 60px;
 }
 
 .operator{
-    border: 1px solid rgb(169, 87, 247);
+    border: 1px solid rgb(238, 181, 255);
     border-radius: 10px;
     padding-bottom: 60px;
+}
+
+.previous-number{
+    font-size: 15px;
+}
+
+.current-number{
+    font-size: 20px;
 }
