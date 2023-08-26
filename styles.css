@@ -33,7 +33,7 @@ body{
     align-items: flex-end;
 }
 
-#clear-btn{
+.clear{
     height: 70px;
     width: 70px;
     border: 1px solid rgb(235, 251, 8);
@@ -41,6 +41,13 @@ body{
 }
 
 .number{
+    border: 1px solid rgb(250, 188, 19);
+    border-radius: 10px;
+    padding-bottom: 60px;
+}
+
+.decimal,
+.equal{
     border: 1px solid rgb(250, 188, 19);
     border-radius: 10px;
     padding-bottom: 60px;
