@@ -22,10 +22,22 @@ operators.forEach((operator) => operator.addEventListener("click", function(e){
     handleOperator(e.target.textContent)
 }));
 
-equal.addEventListener("click", handleEqual())
+equal.addEventListener("click", function(e){
+    handleEqual()
+    console.log(handleEqual)
+})
+
+clearBtn.addEventListener("click", function(e){
+    clearScreen(e.target.textContent)
+    currentScreen.textContent = '';
+    previousScreen.textContent = '';
+});
 
 function handleNumber(num){
-    currentNumber += num;
+    num = Number(num);
+    currentNumber = num;
+    previousNumber.textContent = '';
+    previousNumber = num;
 }
 
 function handleOperator(operator){
@@ -33,8 +45,6 @@ function handleOperator(operator){
 }
 
 function handleEqual(operator){
-    previousNumber = Number(previousNumber);
-    currentNumber = Number(currentNumber);
 
     if(operator === "+"){
         previousNumber += currentNumber;
@@ -46,3 +56,9 @@ function handleEqual(operator){
         previousNumber /= currentNumber;
     }
 };
+
+function clearScreen(){
+    previousNumber = '';
+    currentNumber = '';
+    operator = '';
+}
