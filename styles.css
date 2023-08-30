@@ -8,29 +8,38 @@ body{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.calculator{
+
+    grid-template-columns: repeat(4, 1fr);
+}
+
 .btn{
     height: 70px;
     width: 70px;
-    margin: 15px;
+    margin: 5px;
     font-size: 40px;
 }
 
 .main-screen{
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     flex-direction: row;
 }
 
 #screen{
-    width: 300px;
+    width: 250px;
     height: 65px;
-    border: 1px solid salmon;
+    border: 1px solid rgb(10, 10, 10);
     align-items: center;
-    margin-left: 15px;
+    margin-left: 5px;
     display: flex;
-    flex-direction: column;
+    flex-direction:column;
+    justify-content: flex-end;
     align-items: flex-end;
+    border: solid black;
+    background-color: rgba(253, 249, 249, 0.753);
+    border-radius: 10px;
 }
 
 .clear{
@@ -41,16 +50,52 @@ body{
 }
 
 .number{
-    border: 1px solid rgb(250, 188, 19);
-    border-radius: 10px;
+    border: 1px solid rgba(242, 107, 3, 0.753);
+    background-color: rgba(242, 107, 3, 0.753);
+    border-radius: 20px;
     padding-bottom: 60px;
+    box-shadow: 0 20px 40px 0 rgba(233, 224, 224, 0.03), 0 27px 50px 0 rgba(0,0,0,0.19);;
+}
+
+.number:hover{
+    stroke-dashoffset: -480;
+    animation: move 10s linear infinite;
+    background-color: rgba(242, 107, 3, 0.753);
+    background: rgba(244, 127, 38, 0.753);
+    animation: mirror 3s linear infinite;
 }
 
 .decimal,
 .equal{
-    border: 1px solid rgb(250, 188, 19);
-    border-radius: 10px;
+    border: 1px solid rgba(242, 107, 3, 0.753);
+    background-color: rgba(242, 107, 3, 0.753);
+    border-radius: 20px;
     padding-bottom: 60px;
+    box-shadow: 0 20px 40px 0 rgba(233, 224, 224, 0.03), 0 27px 50px 0 rgba(0,0,0,0.19);;
+}
+
+.decimal:hover{
+    stroke-dashoffset: -480;
+    animation: move 10s linear infinite;
+    background-color: rgba(242, 107, 3, 0.753);
+    background: rgba(244, 127, 38, 0.753);
+    animation: mirror 3s linear infinite;
+}
+
+.equal:hover{
+    stroke-dashoffset: -480;
+    animation: move 10s linear infinite;
+    background-color: rgba(242, 107, 3, 0.753);
+    background: rgba(244, 127, 38, 0.753);
+    animation: mirror 3s linear infinite;
+}
+
+.decimal{
+    border: 1px solid rgba(242, 107, 3, 0.753);
+    background-color: rgba(242, 107, 3, 0.753);
+    border-radius: 20px;
+    padding-bottom: 60px;
+    box-shadow: 0 20px 40px 0 rgba(233, 224, 224, 0.03), 0 27px 50px 0 rgba(0,0,0,0.19);;
 }
 
 .operator{
@@ -60,9 +105,11 @@ body{
 }
 
 .previous-number{
-    font-size: 15px;
+    font-size: 25px;
+    color: black;
 }
 
 .current-number{
-    font-size: 20px;
+    font-size: 30px;
+    color: black;
 }
