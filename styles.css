@@ -9,8 +9,10 @@ body{
 }
 
 .calculator{
-
-    grid-template-columns: repeat(4, 1fr);
+    background:#262424;
+    border-radius: 30px;
+    padding: 30px;
+    box-shadow: 0px 0px 6px 2px rgb(140, 140, 135);
 }
 
 .btn{
@@ -50,11 +52,12 @@ body{
 }
 
 .number{
-    border: 1px solid rgba(242, 107, 3, 0.753);
-    background-color: rgba(242, 107, 3, 0.753);
+    border: 1px solid rgba(19, 19, 18, 0.753);
+    background-color: rgba(12, 11, 11, 0.753);
     border-radius: 20px;
     padding-bottom: 60px;
-    box-shadow: 0 20px 40px 0 rgba(233, 224, 224, 0.03), 0 27px 50px 0 rgba(0,0,0,0.19);;
+    box-shadow: 0 20px 40px 0 rgba(233, 224, 224, 0.03), 0 27px 50px 0 rgba(0,0,0,0.19);
+    color:rgb(244, 244, 244)
 }
 
 .number:hover{
@@ -68,10 +71,11 @@ body{
 .decimal,
 .equal{
     border: 1px solid rgba(242, 107, 3, 0.753);
-    background-color: rgba(242, 107, 3, 0.753);
+    background-color: rgba(18, 17, 16, 0.753);
     border-radius: 20px;
     padding-bottom: 60px;
     box-shadow: 0 20px 40px 0 rgba(233, 224, 224, 0.03), 0 27px 50px 0 rgba(0,0,0,0.19);;
+    color: rgb(244, 244, 244);
 }
 
 .decimal:hover{
@@ -99,17 +103,14 @@ body{
 }
 
 .operator{
-    border: 1px solid rgb(238, 181, 255);
-    border-radius: 10px;
+    border: 1px solid rgba(242, 107, 3, 0.753);
+    border-radius: 20px;
     padding-bottom: 60px;
+    background-color: rgba(242, 107, 3, 0.753);
+    background: rgba(244, 127, 38, 0.753);
 }
 
-.previous-number{
+.display{
     font-size: 25px;
-    color: black;
-}
-
-.current-number{
-    font-size: 30px;
     color: black;
 }

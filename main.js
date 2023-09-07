@@ -4,56 +4,78 @@ let currentNumber = '';
 let operator = '';
 
 /*set values and query respective HTML elements */
-let previousScreen = document.querySelector('.previous-number');
-let currentScreen = document.querySelector('.current-number');
+let currentScreen = document.querySelector('.display');
 let equal = document.querySelector('.equal');
 let decimal = document.querySelector('.decimal');
 let clearBtn = document.querySelector('.clear');
 let numbers = document.querySelectorAll('.number');
 let operators = document.querySelectorAll('.operator');
 
-/*query all numbers' buttons, if a buttons is clicked, the number is returned on screen*/
+/*queries all numbers' buttons, if a button is clicked, the chosen number is returned on screen*/
 numbers.forEach((num) => num.addEventListener("click", function(e){
     handleNumber(e.target.textContent)
     currentScreen.textContent = currentNumber;
 }));
 
-operators.forEach((operator) => operator.addEventListener("click", function(e){
+/*queries all operators' buttons, if a button is clicked, the chosen operator is returned on screen*/
+operators.forEach((op) => op.addEventListener("click", function(e){
     handleOperator(e.target.textContent)
+    currentScreen.textContent = previousNumber + operator;
 }));
 
 equal.addEventListener("click", function(e){
-    handleEqual()
-    console.log(handleEqual)
-})
+    if(previousNumber !== "" && operator !== ""){
+    calculate()
+    currentScreen.textContent = previousNumber;
+    }
+});
 
 clearBtn.addEventListener("click", function(e){
-    clearScreen(e.target.textContent)
+    clearScreen()
     currentScreen.textContent = '';
-    previousScreen.textContent = '';
+});
+
+decimal.addEventListener("click", function(){
+    addDecimal();
 });
 
 function handleNumber(num){
     num = Number(num);
-    currentNumber = num;
-    previousNumber.textContent = '';
-    previousNumber = num;
+    if(currentNumber.includes('.') || currentNumber === '') {
+        currentNumber += num;
+    }
 }
 
-function handleOperator(operator){
-    currentScreen.textContent = currentNumber + operator;
+function handleOperator(op){
+   operator = op;
+   previousNumber = currentNumber;
+   currentNumber = '';
 }
 
-function handleEqual(operator){
+function calculate(){
+    currentNumber = Number(currentNumber)
+    previousNumber = Number(previousNumber)
 
     if(operator === "+"){
-        previousNumber += currentNumber;
+        previousNumber += currentNumber; 
     } else if(operator === "-"){
         previousNumber -= currentNumber;
     } else if(operator === "x"){
         previousNumber *= currentNumber;
     } else if (operator === "/"){
         previousNumber /= currentNumber;
+    } else if(currentNumber.includes('.') && previousNumber === '' & operators.values(true)) {
+        previousNumber = parseFloat(previousNumber).toFixed(5) + "....";
+        currentNumber = '';
+    }
+};
+
+function addDecimal(){
+    if(!currentNumber.toString().includes(".")) {
+        currentNumber = currentNumber + '.';
+        currentScreen.textContent = currentNumber;
+    }else if(currentNumber.length >= 8){
+        currentNumber.setAttribute("disable", 1);
     }
 };
 
@@ -61,4 +83,4 @@ function clearScreen(){
     previousNumber = '';
     currentNumber = '';
     operator = '';
-}
+};
