@@ -46,7 +46,10 @@ decimal.addEventListener("click", function(){
 
 /*declares the currentNumber value according to the pressed number button*/
 function handleNumber(num){
-    currentNumber += num;
+    /*currentNumber's length should not exceed 15 digits*/
+    if(currentNumber.length < 15){
+        currentNumber += num;
+    }
     /*if the currentNumber is a decimal or the currentNumber equals to a value,
     it is stored in the currentNumber and displayed on the screen*/
     if(currentNumber.includes('.') || currentNumber === '') {
