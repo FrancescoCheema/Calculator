@@ -1,4 +1,4 @@
-/*set values to '' start off with */
+/*set values to empty strings to start off with */
 let previousNumber = '';
 let currentNumber = '';
 let operator = '';
@@ -23,6 +23,8 @@ operators.forEach((op) => op.addEventListener("click", function(e){
     currentScreen.textContent = previousNumber + operator;
 }));
 
+/*queries the equal button, if the equal button is clicked, it checks if the previous number and operator
+has a value and then proceeds starting the calculate function*/
 equal.addEventListener("click", function(e){
     if(previousNumber !== "" && operator !== ""){
     calculate()
@@ -30,28 +32,39 @@ equal.addEventListener("click", function(e){
     }
 });
 
+/*queries the clear button, once pressed, it starts the function to clear any values from the
+operator, previousNumber and currentNumber*/ 
 clearBtn.addEventListener("click", function(e){
     clearScreen()
     currentScreen.textContent = '';
 });
 
+/*queries the decimal button, once pressed, it starts the addDecimal declaration*/
 decimal.addEventListener("click", function(){
     addDecimal();
 });
 
+/*declares the currentNumber value according to the pressed number button*/
 function handleNumber(num){
-    num = Number(num);
+    currentNumber += num;
+    /*if the currentNumber is a decimal or the currentNumber equals to a value,
+    it is stored in the currentNumber and displayed on the screen*/
     if(currentNumber.includes('.') || currentNumber === '') {
-        currentNumber += num;
+        currentNumber = currentNumber;
+        currentScreen.textContent = currentNumber;
     }
 }
 
+/*each operator is stored in the operator variable, previousNumber is currentNumber and currentNumber
+is an empty string*/
 function handleOperator(op){
    operator = op;
    previousNumber = currentNumber;
    currentNumber = '';
 }
 
+/*currentNumber and previousNumber are converted from strings to numbers, if statements check based on
+the calculation performed, previousNumber equals the result*/
 function calculate(){
     currentNumber = Number(currentNumber)
     previousNumber = Number(previousNumber)
@@ -62,23 +75,34 @@ function calculate(){
         previousNumber -= currentNumber;
     } else if(operator === "x"){
         previousNumber *= currentNumber;
-    } else if (operator === "/"){
-        previousNumber /= currentNumber;
-    } else if(currentNumber.includes('.') && previousNumber === '' & operators.values(true)) {
-        previousNumber = parseFloat(previousNumber).toFixed(5) + "....";
-        currentNumber = '';
+    } else if(operator === "/"){
+        if (currentNumber === 0){
+            previousNumber = "Error!"
+        } else {
+            previousNumber /= currentNumber;
+        }
+    }
+
+    /*if previousNumber is finite, it return "invalid syntax" otherwise it's executed as normal, if it's
+    a decimal, it will return the calculation with 2 decimal places*/
+    if(!isFinite(previousNumber)){
+        previousNumber = "Invalid syntax"
+    } else {
+        previousNumber = previousNumber.toFixed(2)
+        previousNumber = parseFloat(previousNumber)
     }
 };
 
+/*if currentNumber as a string does not include a period, it is added to currentNumber*/
 function addDecimal(){
     if(!currentNumber.toString().includes(".")) {
-        currentNumber = currentNumber + '.';
+        currentNumber += '.';
         currentScreen.textContent = currentNumber;
-    }else if(currentNumber.length >= 8){
-        currentNumber.setAttribute("disable", 1);
     }
+    
 };
 
+/*all variables return to their default values*/
 function clearScreen(){
     previousNumber = '';
     currentNumber = '';

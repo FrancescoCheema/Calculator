@@ -47,8 +47,12 @@ body{
 .clear{
     height: 70px;
     width: 70px;
-    border: 1px solid rgb(235, 251, 8);
-    border-radius: 10px;
+    border: 1px solid rgb(161, 33, 4);
+    border-radius: 20px;
+    padding-bottom: 60px;
+    box-shadow: 0 20px 40px 0 rgba(233, 224, 224, 0.03), 0 27px 50px 0 rgba(0,0,0,0.19);
+    color:rgb(244, 244, 244);
+    background-color: rgb(161, 33, 4);
 }
 
 .number{
@@ -63,14 +67,23 @@ body{
 .number:hover{
     stroke-dashoffset: -480;
     animation: move 10s linear infinite;
-    background-color: rgba(242, 107, 3, 0.753);
-    background: rgba(244, 127, 38, 0.753);
+    background-color: rgba(98, 81, 68, 0.753);
+    background: rgba(237, 222, 222, 0.753);
     animation: mirror 3s linear infinite;
 }
 
-.decimal,
+.decimal{
+    border: 1px solid rgba(19, 19, 18, 0.753);
+    background-color: rgba(12, 11, 11, 0.753);
+    border-radius: 20px;
+    padding-bottom: 60px;
+    box-shadow: 0 20px 40px 0 rgba(233, 224, 224, 0.03), 0 27px 50px 0 rgba(0,0,0,0.19);
+    color:rgb(244, 244, 244)
+}
+
+
 .equal{
-    border: 1px solid rgba(242, 107, 3, 0.753);
+    border: 1px solid rgba(190, 46, 94, 0.753);
     background-color: rgba(18, 17, 16, 0.753);
     border-radius: 20px;
     padding-bottom: 60px;
@@ -81,8 +94,8 @@ body{
 .decimal:hover{
     stroke-dashoffset: -480;
     animation: move 10s linear infinite;
-    background-color: rgba(242, 107, 3, 0.753);
-    background: rgba(244, 127, 38, 0.753);
+    background-color: rgba(98, 81, 68, 0.753);
+    background: rgba(237, 222, 222, 0.753);
     animation: mirror 3s linear infinite;
 }
 
@@ -90,24 +103,25 @@ body{
     stroke-dashoffset: -480;
     animation: move 10s linear infinite;
     background-color: rgba(242, 107, 3, 0.753);
-    background: rgba(244, 127, 38, 0.753);
+    background: rgba(237, 86, 16, 0.753);
     animation: mirror 3s linear infinite;
-}
-
-.decimal{
-    border: 1px solid rgba(242, 107, 3, 0.753);
-    background-color: rgba(242, 107, 3, 0.753);
-    border-radius: 20px;
-    padding-bottom: 60px;
-    box-shadow: 0 20px 40px 0 rgba(233, 224, 224, 0.03), 0 27px 50px 0 rgba(0,0,0,0.19);;
 }
 
 .operator{
     border: 1px solid rgba(242, 107, 3, 0.753);
     border-radius: 20px;
-    padding-bottom: 60px;
+    padding-bottom: 20px;
     background-color: rgba(242, 107, 3, 0.753);
     background: rgba(244, 127, 38, 0.753);
+    color:rgb(244, 244, 244)
+}
+
+.operator:hover{
+    stroke-dashoffset: -480;
+    animation: move 10s linear infinite;
+    background-color: rgba(242, 107, 3, 0.753);
+    background: rgba(240, 229, 224, 0.753);
+    animation: mirror 3s linear infinite;
 }
 
 .display{
