@@ -128,3 +128,19 @@ body{
     font-size: 25px;
     color: black;
 }
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.copyright {
+    font-size: 40px;
+    color: black;
+    position: fixed;
+    left: 50%;
+    bottom: -15px;
+    margin: 0 auto;
+    transform: translate(-50%, -50%);
+}
